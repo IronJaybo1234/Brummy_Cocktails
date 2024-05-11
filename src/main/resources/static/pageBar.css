@@ -11,6 +11,8 @@ header {
     padding: 5px ;
     text-align: center;
 }
+
+
 nav {
     display: flex;
     justify-content: center;

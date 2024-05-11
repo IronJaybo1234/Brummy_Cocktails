@@ -1,54 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Image Scroller</title>
-  <style>
-    /* Basic styling */
+<style>
     .container {
-      display: flex;
-      align-items: center;
+        font-family: Tahoma, sans-serif;
+        display: flex;
+        border-radius: 20px;
+        border: 2px solid;
+        overflow: hidden;
+        background-color: #bd3737;
     }
-    .thumbnail {
-      width: 50px; /* Adjust thumbnail width as needed */
-      height:50px;
-      cursor: pointer;
-      margin-right: 10px;
+
+    .deal {
+        flex: 1;
+        padding: 20px;
     }
-    .thumbnail:hover {
-      opacity: 0.7; /* Dim the thumbnail on hover */
+
+    .deal h2 {
+        margin-top: 0;
+        font-size: 30px;
     }
-    .selected {
-      border: 10px solid blue; /* Border for selected thumbnail */
+
+
+    .image-container {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #691e17;
     }
-    .large-image {
-      width: 300px; /* Adjust large image width as needed */
-      height: 300px;
-      object-fit: cover;
+
+    .image-container img {
+        max-width: 50%;
+        max-height: 50%;
     }
-  </style>
+
+</style>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
 <div class="container">
-  <div id="thumbnails">
-    <!-- Thumbnail images -->
-    <img class="thumbnail" src="cute.jpg" onclick="displayImage('cute.jpg')" />
-    <img class="thumbnail" src="martini.jpg" onclick="displayImage('martini.jpg')" />
-    <img class="thumbnail" src="icey.jpg" onclick="displayImage('icey.jpg')" />
-    <!-- Add more thumbnails as needed -->
-  </div>
-  <div>
-    <!-- Large image display -->
-    <img id="largeImage" class="large-image" src="" alt="Large Image" />
-  </div>
+    <div class="deal">
+        <h2>Title</h2>
+        <p>Text goes here...</p>
+    </div>
+    <div class="image-container">
+        <img src="qr.png" alt="QR code for deal">
+    </div>
 </div>
-
-<script>
-  function displayImage(imageUrl) {
-    var largeImage = document.getElementById("largeImage");
-    largeImage.src = imageUrl;
-  }
-</script>
+<div class="container">
+    <div class="deal">
+        <h2>Title</h2>
+        <p>Text goes here...</p>
+    </div>
+    <div class="image-container">
+        <img src="qr.png" alt="QR code for deal">
+    </div>
+</div>
 </body>
 </html>
