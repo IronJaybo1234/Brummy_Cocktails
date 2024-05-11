@@ -1,59 +1,58 @@
+/* styles.css */
+
+/* Basic styling */
 .button {
-    background-color: #4CAF50; /* Green */
-    border: none;
-    color: white;
-    margin-bottom: 50px;
-    margin-left: 100px;
-    text-align: center;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 10px;
     position: relative;
     overflow: hidden;
+    border-radius: 10px;
+    border: none;
     width: 300px;
     height: 200px;
+    margin-top: 50px;
+    margin-left: 50px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-
 
 /* Image styling */
 .button img {
+    width: auto;
+    height: 100%;
+    min-width: 100%; /* Ensure the image covers the entire button */
+    object-fit: cover; /* Ensure the image covers the entire button */
+    transition: opacity 0.5s;
+}
+
+/* Background sliding effect */
+.button::before {
+    content: "";
     position: absolute;
     top: 0;
-    left: -100%; /* Start outside the button */
-    transition: left 0.5s;
+    left: -100%;
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    background-color: #4CAF50; /* Green */
+    transition: left 0.5s;
 }
 
-/* Slide in effect on hover */
-.button:hover img {
-    left: 0;
-}
-
+/* Text styling */
 .button .text {
-    font-size: 20px;
-    position: relative;
-    z-index: 1;
-    -webkit-text-stroke: 1px black;
-}
-
-.button:hover .text {
-    opacity: 0;
-}
-
-/* Display new text on hover */
-.button:hover .new-text {
-    opacity: 1; /* Show new text */
-    z-index: 1;
-}
-
-/* New text styling */
-.button .new-text {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    opacity: 0; /* Hide new text by default */
-    transition: opacity 0.3s; /* Add transition effect */
+    color: white;
+    z-index: 1;
+}
+
+/* Slide in effect on hover */
+.button:hover::before {
+    left: 0;
+}
+
+/* Hide the image when button is hovered */
+.button:hover img {
+    opacity: 0;
 }
